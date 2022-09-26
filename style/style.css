@@ -1,0 +1,11 @@
+.system-none {
+    display: none;
+}
+
+.system-active {
+    display: block !important;
+}
+
+.module-pje {
+    display: none;
+}

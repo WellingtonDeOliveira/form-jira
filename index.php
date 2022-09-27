@@ -48,35 +48,35 @@
                         <input type="checkbox" id="SIGEP-Modulo" class="form-check-input listing" name="SIGEP Módulo Principal">
                         <label for="SIGEP Módulo Principal" class="form-check-label">SIGEP Módulo Principal</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-sigep" name="SIGEP-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-sigep" name="SIGEP-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="SIGEP-Online" class="form-check-input listing" name="SIGEP-Online">
                         <label for="SIGEP-Online" class="form-check-label">SIGEP-Online</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-sigep-online" name="SIGEP-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-sigep-online" name="SIGEP-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="FolhaWeb" class="form-check-input listing" name="FolhaWeb">
                         <label for="FolhaWeb" class="form-check-label">FolhaWeb</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-folhaweb" name="FolhaWeb-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-folhaweb" name="FolhaWeb-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="SIGS" class="form-check-input listing" name="SIGS">
                         <label for="SIGS" class="form-check-label">SIGS</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-sigs" name="SIGS-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-sigs" name="SIGS-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="GEST" class="form-check-input listing" name="GEST">
                         <label for="GEST" class="form-check-label">GEST</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-gest" name="GEST-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-gest" name="GEST-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
             </div>
             <div class="system-none system-pje input-group">
@@ -86,39 +86,39 @@
                         <input type="checkbox" id="PJE" class="form-check-input listing" name="PJE">
                         <label for="PJE" class="form-check-label">PJE</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-pje" name="PJE-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-pje" name="PJE-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="AUD" class="form-check-input listing" name="AUD">
                         <label for="AUD" class="form-check-label">AUD</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-aud" name="AUD-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-aud" name="AUD-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="JTE" class="form-check-input listing" name="JTE">
                         <label for="JTE" class="form-check-label">JTE</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-jte" name="JTE-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-jte" name="JTE-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="PjeCalc" class="form-check-input listing" name="PjeCalc">
                         <label for="PjeCalc" class="form-check-label">PjeCalc</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-pjeCalc" name="PjeCalc-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-pjeCalc" name="PjeCalc-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input listing" id="SIF" name="SIF">
                         <label for="SIF" class="form-check-label">SIF</label>
                     </div>
-                    <input type="text" class="form-control system-none checked-sif" name="SIF-mod-ver" placeholder="Digite a versão do módulo..."> 
+                    <input type="text" class="form-control m-2 text-module system-none checked-sif" name="SIF-mod-ver" placeholder="Digite a versão do módulo..."> 
                 </div>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary button-form">Enviar</button>
+                <button type="submit" class="btn btn-primary button-form">ENVIAR</button>
             </div>
         </form>
     </div>

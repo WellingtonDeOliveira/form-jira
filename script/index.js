@@ -14,8 +14,8 @@ $("#system").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp2 = $("#AUD").prop("checked");
-    if (temp2 == true) {
+    var textModuleAud = $("#AUD").prop("checked");
+    if (textModuleAud == true) {
         $('.checked-aud').removeClass('system-none');
     }else{
         $('.checked-aud').addClass('system-none');
@@ -23,8 +23,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp3 = $("#JTE").prop("checked");
-    if (temp3 == true) {
+    var textModuleJte = $("#JTE").prop("checked");
+    if (textModuleJte == true) {
         $('.checked-jte').removeClass('system-none');
     }else{
         $('.checked-jte').addClass('system-none');
@@ -32,8 +32,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp4 = $("#PjeCalc").prop("checked");
-    if (temp4 == true) {
+    var textModulePjeC = $("#PjeCalc").prop("checked");
+    if (textModulePjeC == true) {
         $('.checked-pjeCalc').removeClass('system-none');
     }else{
         $('.checked-pjeCalc').addClass('system-none');
@@ -41,8 +41,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp5 = $("#SIF").prop("checked");
-    if (temp5 == true) {
+    var textModuleSif = $("#SIF").prop("checked");
+    if (textModuleSif == true) {
         $('.checked-sif').removeClass('system-none');
     }else{
         $('.checked-sif').addClass('system-none');
@@ -50,8 +50,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp1 = $("#PJE").prop("checked");
-    if (temp1 == true) {
+    var textModulePje = $("#PJE").prop("checked");
+    if (textModulePje == true) {
         $('.checked-pje').removeClass('system-none');
     }else{
         $('.checked-pje').addClass('system-none');
@@ -59,8 +59,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp6 = $("#SIGEP-Modulo").prop("checked");
-    if (temp6 == true) {
+    var textModuleSigepM = $("#SIGEP-Modulo").prop("checked");
+    if (textModuleSigepM == true) {
         $('.checked-sigep').removeClass('system-none');
     }else{
         $('.checked-sigep').addClass('system-none');
@@ -68,8 +68,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp7 = $("#SIGEP-Online").prop("checked");
-    if (temp7 == true) {
+    var textModuleSigepO = $("#SIGEP-Online").prop("checked");
+    if (textModuleSigepO == true) {
         $('.checked-sigep-online').removeClass('system-none');
     }else{
         $('.checked-sigep-online').addClass('system-none');
@@ -77,8 +77,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp8 = $("#FolhaWeb").prop("checked");
-    if (temp8 == true) {
+    var textModuleFolhaWeb = $("#FolhaWeb").prop("checked");
+    if (textModuleFolhaWeb == true) {
         $('.checked-folhaweb').removeClass('system-none');
     }else{
         $('.checked-folhaweb').addClass('system-none');
@@ -86,8 +86,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp9 = $("#SIGS").prop("checked");
-    if (temp9 == true) {
+    var textModuleSigs = $("#SIGS").prop("checked");
+    if (textModuleSigs == true) {
         $('.checked-sigs').removeClass('system-none');
     }else{
         $('.checked-sigs').addClass('system-none');
@@ -95,8 +95,8 @@ $(".form-check").change(function () {
 });
 
 $(".form-check").change(function () {
-    var temp10 = $("#GEST").prop("checked");
-    if (temp10 == true) {
+    var textModuleGest = $("#GEST").prop("checked");
+    if (textModuleGest == true) {
         $('.checked-gest').removeClass('system-none');
     } else {
         $('.checked-gest').addClass('system-none');

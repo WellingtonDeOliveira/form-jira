@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/main.css">
-    <title>Formulário</title>
+    <title>Formulário JIRA</title>
 </head>
 
 <body>
@@ -17,43 +17,70 @@
         </div>
         <form action="./script/submit.php" method="POST">
             <div class="flex-row">
-                <label for="system" class="pb-2"><strong>SELECIONE O SISTEMA:</strong></label>
+                <label for="system" class="pb-2"><strong>SELECIONE O SISTEMA</strong></label>
                 <select id="system" name="system" class="form-control mb-2 w-50" required>
                     <option value="PJe-JT" selected>PJe-JT</option>
                     <option value="SIGEP-JT">SIGEP-JT</option>
                 </select>
             </div>
             <div class="system-none system-sigep">
-                <label for="system" class=""><strong>SIGEP 1.30.</strong></label>
+                <label for="version" class=""><strong>SIGEP 1.30.</strong></label>
                 <select name="version" class="form-control mb-2 w-75">
-                    <option value="" selected> ------- SELECIONE ------- </option>
+                    <option value="" selected> ------- SELECIONE A VERSÃO ------- </option>
                     <?php for ($i = 0; $i <= 10; $i++) {
                         echo '<option value="' . $i . '">' . $i . '</option>';
                     } ?>
                 </select>
             </div>
             <div class="system-none system-pje">
-                <label for="system" class=""><strong>PJE 2.8.</strong></label>
+                <label for="version" class=""><strong>PJE 2.8.</strong></label>
                 <select name="version" class="form-control mb-2 w-75" required>
-                    <option value="" selected> ------- SELECIONE ------- </option>
+                    <option value="" selected> ------- SELECIONE A VERSÃO ------- </option>
                     <?php for ($i = 0; $i < 10; $i++) {
                         echo '<option value="' . $i . '">' . $i . '</option>';
                     } ?>
                 </select>
             </div>
             <div class="system-none system-sigep">
-                <label for="system" class=""><strong>Modulos SIGEP</strong></label>
-                <select name="module" class="form-control mb-2 w-75">
-                    <option value="" selected> ------- SELECIONE ------- </option>
-                    <option value="SIGEP Módulo Principal">SIGEP Módulo Principal</option>
-                    <option value="SIGEP-Online">SIGEP-Online</option>
-                    <option value="FolhaWeb">FolhaWeb</option>
-                    <option value="SIGS">SIGS</option>
-                    <option value="GEST">GEST</option>
-                </select>
+                <label for="Modulos SIGEP" class=""><strong>Modulos SIGEP</strong></label>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input type="checkbox" id="SIGEP Módulo Principal" class="form-check-input listing" name="SIGEP Módulo Principal">
+                        <label for="SIGEP Módulo Principal" class="form-check-label">SIGEP Módulo Principal</label>
+                    </div>
+                    <input type="text" class="form-control system-none" name="SIGEP-mod-ver" placeholder="Digite a versão do módulo..."> 
+                </div>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input type="checkbox" id="SIGEP-Online" class="form-check-input listing" name="SIGEP-Online">
+                        <label for="SIGEP-Online" class="form-check-label">SIGEP-Online</label>
+                    </div>
+                    <input type="text" class="form-control system-none" name="SIGEP-mod-ver" placeholder="Digite a versão do módulo..."> 
+                </div>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input type="checkbox" id="FolhaWeb" class="form-check-input listing" name="FolhaWeb">
+                        <label for="FolhaWeb" class="form-check-label">FolhaWeb</label>
+                    </div>
+                    <input type="text" class="form-control system-none" name="FolhaWeb-mod-ver" placeholder="Digite a versão do módulo..."> 
+                </div>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input type="checkbox" id="SIGS" class="form-check-input listing" name="SIGS">
+                        <label for="SIGS" class="form-check-label">SIGS</label>
+                    </div>
+                    <input type="text" class="form-control system-none" name="SIGS-mod-ver" placeholder="Digite a versão do módulo..."> 
+                </div>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input type="checkbox" id="GEST" class="form-check-input listing" name="GEST">
+                        <label for="GEST" class="form-check-label">GEST</label>
+                    </div>
+                    <input type="text" class="form-control system-none" name="GEST-mod-ver" placeholder="Digite a versão do módulo..."> 
+                </div>
             </div>
             <div class="system-none system-pje input-group">
-                <label for="system" class=""><strong>Modulos PJE</strong></label>
+                <label for="Modulos PJE" class=""><strong>Modulos PJE</strong></label>
                 <div class="d-flex">
                     <div class="form-check">
                         <input type="checkbox" id="PJE" class="form-check-input listing" name="PJE">

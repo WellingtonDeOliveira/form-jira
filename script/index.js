@@ -1,13 +1,18 @@
 $("#system").each(function () {
     $('div.system-pje').addClass('system-active');
+    $('#pje-required').attr("required", "req");
 });
 
 $("#system").change(function () {
     var change = $(this).val();
     if (change == 'SIGEP-JT') {
+        $('#sigep-required').attr("required", "req");
+        $('#pje-required').removeAttr("required");
         $('div.system-pje').removeClass('system-active');
         $('div.system-sigep').addClass('system-active');
     } else {
+        $('#pje-required').attr("required", "req");
+        $('#sigep-required').removeAttr("required");
         $('div.system-pje').addClass('system-active');
         $('div.system-sigep').removeClass('system-active');
     }

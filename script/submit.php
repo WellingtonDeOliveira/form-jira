@@ -50,13 +50,14 @@ text-decoration: none;
 //enviar
 
   // emails para quem será enviado o formulário
-  $destino = "fra.wellington.oliveira@gmail.com";
+  //$destino = "fra.wellington.oliveira@gmail.com";
+  $destino = "erick.barreto@trt7.jus.br";
   $assunto = "Teste formulario criação card jira";
 
   // É necessário indicar que o formato do e-mail é html
   $headers  = 'MIME-Version: 1.0' . "\r\n";
       $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-      //$headers .= 'From: $nome <$email>';
+      $headers .= 'From: $nome <$email>';
   //$headers .= "Bcc: $EmailPadrao\r\n";
 
   $enviaremail = mail($destino, $assunto, $arquivo, $headers);

@@ -3,6 +3,10 @@ $("#system").each(function () {
     $('#pje-required').attr("required", "req");
 });
 
+$('form').submit(function(){
+    $(this)[0].reset();
+});
+
 $("#system").change(function () {
     var change = $(this).val();
     if (change == 'SIGEP-JT') {

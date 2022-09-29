@@ -11,11 +11,37 @@ require_once('./PHPMailer/SMTP.php');
 $mail = new PHPMailer;
 $system = $_POST['system'];
 $version = $_POST['version'];
-$module = $_POST['module'];
+
+if(isset($_POST['module1']) || isset($_POST['mod-ver1'])){
+  $module1 = $_POST['module1'];
+  $moduleVersion1 = $_POST['mod-ver1'];
+}
+if(isset($_POST['module2'])){
+  $module2 = $_POST['module2'];
+  $moduleVersion2 = $_POST['mod-ver2'];
+}
+if(isset($_POST['module3'])){
+  $module3 = $_POST['module3'];
+  $moduleVersion3 = $_POST['mod-ver3'];
+}
+if(isset($_POST['module4'])){
+  $module4 = $_POST['module4'];
+  $moduleVersion4 = $_POST['mod-ver4'];
+}
+if(isset($_POST['module5'])){
+  $module5 = $_POST['module5'];
+  $moduleVersion5 = $_POST['mod-ver5'];
+}
+
 $data_envio = date('d/m/Y');
 $hora_envio = date('H:i:s');
 
 try {
+  echo "teste: $module1 version: $moduleVersion1 <br>";
+  echo "teste: $module2 version: $moduleVersion2 <br>";
+  echo "teste: $module3 version: $moduleVersion3 <br>";
+  echo "teste: $module4 version: $moduleVersion4 <br>";
+  echo "teste: $module5 version: $moduleVersion5 <br>";
   //Server settings
   $mail->isSMTP();                                            //Send using SMTP
   $mail->SMTPDebug = 2;                      //Enable verbose debug output
@@ -54,7 +80,6 @@ try {
 } catch (Exception $e) {
   echo "Email não mandado. Erro: {$mail->ErrorInfo}";
 }
-
 
 // $getdoc->
 // // Corpo E-mail
@@ -118,3 +143,6 @@ try {
 // $mgm = "ERRO AO ENVIAR E-MAIL!";
 // echo "";
 // }
+clearstatcache();
+
+?>

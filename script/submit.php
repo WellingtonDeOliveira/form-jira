@@ -8,35 +8,47 @@ require_once('./PHPMailer/Exception.php');
 require_once('./PHPMailer/PHPMailer.php');
 require_once('./PHPMailer/SMTP.php');
 
-$mail = new PHPMailer;
+$mail = new PHPMailer(true);
 $system = $_POST['system'];
 $version = $_POST['version'];
 
-if(isset($_POST['module1']) || isset($_POST['mod-ver1'])){
+if($system == "PJe-JT") {
+
+  $moduleVersion1 = $_POST['PJE'];
+  $moduleVersion2 = $_POST['AUD'];
+  $moduleVersion3 = $_POST['JTE'];
+  $moduleVersion4 = $_POST['PjeCalc'];
+  $moduleVersion5 = $_POST['SIF'];
+
   $module1 = $_POST['module1'];
-  $moduleVersion1 = $_POST['mod-ver1'];
-}
-if(isset($_POST['module2'])){
   $module2 = $_POST['module2'];
-  $moduleVersion2 = $_POST['mod-ver2'];
-}
-if(isset($_POST['module3'])){
   $module3 = $_POST['module3'];
-  $moduleVersion3 = $_POST['mod-ver3'];
-}
-if(isset($_POST['module4'])){
   $module4 = $_POST['module4'];
-  $moduleVersion4 = $_POST['mod-ver4'];
-}
-if(isset($_POST['module5'])){
   $module5 = $_POST['module5'];
-  $moduleVersion5 = $_POST['mod-ver5'];
+
+} else if($system == "SIGEP-JT") {
+
+  $moduleVersion1 = $_POST['SIGEP-Modulo'];
+  $moduleVersion2 = $_POST['SIGEP-Online'];
+  $moduleVersion3 = $_POST['FolhaWeb'];
+  $moduleVersion4 = $_POST['SIGS'];
+  $moduleVersion5 = $_POST['GEST'];
+
+  $module1 = $_POST['module1'];
+  $module2 = $_POST['module2'];
+  $module3 = $_POST['module3'];
+  $module4 = $_POST['module4'];
+  $module5 = $_POST['module5'];
+
 }
+
+
 
 $data_envio = date('d/m/Y');
 $hora_envio = date('H:i:s');
 
 try {
+  var_dump($_POST);
   echo "teste: $module1 version: $moduleVersion1 <br>";
   echo "teste: $module2 version: $moduleVersion2 <br>";
   echo "teste: $module3 version: $moduleVersion3 <br>";
@@ -143,6 +155,5 @@ try {
 // $mgm = "ERRO AO ENVIAR E-MAIL!";
 // echo "";
 // }
-clearstatcache();
 
 ?>

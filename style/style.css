@@ -21,3 +21,22 @@
     padding: 0;
     height: 1.5rem;
 }
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer{
+    background: rgb(200,200,200);
+    border-radius: 5px;
+    padding-left: 15px;
+    height: 4rem;
+    padding-top: 1rem;
+    width: 44rem;
+    margin-top: 1rem;
+}
+
+.final-footer{
+    padding-right: 1rem;
+}

@@ -1,0 +1,28 @@
+{  
+    "perfis":[
+        [
+            [
+                "teste@teste.com"
+            ],
+            [
+                "teste1@teste.com",
+                "teste2@teste.com",
+                "teste3@teste.com",
+                "teste4@teste.com",
+                "teste5@teste.com"
+            ]
+        ],
+        [
+            [
+                "teste6@teste.com"
+            ],
+            [
+                "teste7@teste.com",
+                "teste8@teste.com",
+                "teste9@teste.com",
+                "teste10@teste.com",
+                "teste11@teste.com"
+            ]
+        ]
+    ]
+}

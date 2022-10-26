@@ -1,7 +1,15 @@
 .container-form{
     padding: 40px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     box-shadow: 2px 10px 30px 15px rgba(0, 0, 0, 0.25);
+}
+
+body{
+    background-color: rgb(232, 230, 230);
+}
+
+.container-form{
+    background-color: white;
 }
 
 .system-none {
@@ -22,21 +30,18 @@
     height: 1.5rem;
 }
 
+.footer{
+    background-color: rgb(200, 200, 200);
+    margin-top: -2.5rem;
+    padding: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    box-shadow: 2px 10px 30px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 10px 10px;
+}
+
 footer{
     display: flex;
+    padding: 1rem;
     justify-content: space-between;
-}
-
-.footer{
-    background: rgb(200,200,200);
-    border-radius: 5px;
-    padding-left: 15px;
-    height: 4rem;
-    padding-top: 1rem;
-    width: 44rem;
-    margin-top: 1rem;
-}
-
-.final-footer{
-    padding-right: 1rem;
 }

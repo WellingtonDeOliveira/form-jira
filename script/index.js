@@ -8,19 +8,19 @@ $("#system").each(function () {
         $('.new-append-pje').append('<option value="' + i + '">' + i + '</option>');
     }
     $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
-        console.log();
-        for(let i = 0; i < data.perfis.length; i++){
-            $('#perfil').append('<option value="perfil_' + (i+1) + '">perfil_' + (i+1) + '</option>');
+        for (let i = 0; i < data.perfis.length; i++) {
+            $('#perfil').append('<option value="perfil_' + (i + 1) + '">perfil_' + (i + 1) + '</option>');
         }
         $('#perfil').append('<option value="perfil_novo">perfil_novo</option>');
         $("#responsavel").val(data.perfis[0][0]);
         var str = "";
         var tam = 0;
-        for(let i = 0; i < data.perfis[0][1].length; i++){
-            str += data.perfis[0][1][i]+",";
+        for (let i = 0; i < data.perfis[0][1].length; i++) {
+            str += data.perfis[0][1][i] + ",";
             tam = str.length;
         }
-        $("#observadores").val(str.substring(0, (tam-2)));
+        $("#save").attr("disabled", true);
+        $("#observadores").val(str.substring(0, (tam - 2)));
     })
 });
 
@@ -30,21 +30,81 @@ $("#perfil").change(function () {
     $("#save").attr("disabled", true);
     $("#responsavel").val("");
     $("#observadores").val("");
-    console.log(info)
+    //console.log(info)
     $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
-        $("#responsavel").val(data.perfis[(info - 1)][0]);
+        $("#responsavel").val(data.perfis[(info - 1)][0] != undefined ? data.perfis[(info - 1)][0] : "");
         var str = "";
         var tam = 0;
-        for(let i = 0; i < data.perfis[(info - 1)][1].length; i++){
-            str += data.perfis[(info - 1)][1][i]+" ,";
+        for (let i = 0; i < data.perfis[(info - 1)][1].length; i++) {
+            str += data.perfis[(info - 1)][1][i] + " ,";
             tam = str.length;
         }
-        $("#observadores").val(str.substring(0, (tam-2)));
+        $("#observadores").val(str.substring(0, (tam - 2)));
     })
-    if(per == 'perfil_novo'){
+})
+
+$("#responsavel").change(function () {
+    var per = $("#perfil").val();
+    if (per == 'perfil_novo' && $("responsavel").val() != '') {
         $("#save").attr("disabled", false);
+    } else {
+        $("#save").attr("disabled", true);
     }
 })
+
+
+$("#save").click(function () {
+
+    // convertendo os observadores para array
+    let temp = $("#observadores").val();
+    let temp_array = temp.split('');
+    let array_conteudo = [];
+    let email_conteudo ='';
+    for(let i = 0; i < temp_array.length; i++){
+        if(temp_array[i] == ','){
+            array_conteudo.push(email_conteudo);
+            email_conteudo = '';
+        }else{
+            email_conteudo += temp_array[i];
+        }
+    }
+    array_conteudo.push(email_conteudo);
+    console.log(array_conteudo);
+
+    // Criar uma parte do json novo, onde terar o novo perfil
+    var newConteudo = '[["'+$('#responsavel').val()+'"],[';
+    for(let i = 0; i < array_conteudo.length; i++){
+        newConteudo += JSON.stringify(array_conteudo[i])+',';
+    }
+    newConteudo = newConteudo.substring(0, (newConteudo.length - 1));
+    newConteudo += ']]';
+    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
+        let conteudo = '{';
+        conteudo += '"perfis": [';
+        // acresentando valor do novo ciclo
+        for (let i = 0; i < data.count; i++) {
+            conteudo += JSON.stringify(data.perfis[i]) + ',';
+        }
+        conteudo += newConteudo;
+        conteudo += '], "count": ' + (data.count + 1);
+        conteudo += '}';
+        console.log(conteudo);
+    })
+    //atualizarValores(final);
+    $.ajax({
+        url: 'saveJson.php',
+        type: 'POST',
+        data: { data: dados },
+        success: function (result) {
+            // Retorno se tudo ocorreu normalmente
+            console.log("Deu certo");
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // Retorno caso algum erro ocorra
+            console.log("Não deu certo")
+        }
+    });
+});
 
 // $(document).ready(function () {
 //     $("form").submit(function (event) {

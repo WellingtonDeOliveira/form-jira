@@ -77,7 +77,7 @@
                     <select id="perfil" name="perfil" class="form-control mb-2 ms-1 w-75"></select>
                 </div>
                 <div class="save col-3 mt-2">
-                    <button id="save" class="btn btn-primary px-4 py-1 mt-4">salvar</button>
+                    <button id="save" type="button" class="btn btn-primary px-4 py-1 mt-4">salvar</button>
                 </div>
             </div>
             

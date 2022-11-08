@@ -7,7 +7,7 @@ $("#system").each(function () {
     for (let i = 0; i < 10; i++) {
         $('.new-append-pje').append('<option value="' + i + '">' + i + '</option>');
     }
-    $.get("http://localhost:8085/form-jira/perfil.json", function (data) {
+    $.get("https://homologacao-intranet.trt7.jus.br/formulario-Jira/perfil.json", function (data) {
         console.log(data);
         for (let i = 0; i < data.perfis.length; i++) {
             $('#perfil').append('<option value="perfil_' + (i + 1) + '">perfil_' + (i + 1) + '</option>');
@@ -32,7 +32,7 @@ $("#perfil").change(function () {
     $("#responsavel").val("");
     $("#observadores").val("");
     //console.log(info)
-    $.get("http://localhost:8085/form-jira/perfil.json", function (data) {
+    $.get("https://homologacao-intranet.trt7.jus.br/formulario-Jira/perfil.json", function (data) {
         $("#responsavel").val(data.perfis[(info - 1)][0] != undefined ? data.perfis[(info - 1)][0] : "");
         var str = "";
         var tam = 0;
@@ -79,7 +79,7 @@ $("#save").click(function () {
     }
     newConteudo = newConteudo.substring(0, (newConteudo.length - 1));
     newConteudo += ']]';
-    $.get("http://localhost:8085/form-jira/perfil.json", function (data) {
+    $.get("https://homologacao-intranet.trt7.jus.br/formulario-Jira/perfil.json", function (data) {
         var conteudo = '{';
         conteudo += '"perfis": [';
         // acresentando valor do novo perfil

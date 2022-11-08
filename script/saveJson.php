@@ -1,12 +1,13 @@
 <?php
 $dados = $_POST['data'];
 
-$json = json_encode($dados);
+//$json = json_encode($dados);
+$arquivo = '../perfil.json';
 try{
-    file_put_contents('../perfil.json', $json);
+    file_put_contents($arquivo, $dados);
 }catch(Exception $e){
-
+    echo $e;
 }
-echo json_encode($response);
+echo $response;
 
 ?>

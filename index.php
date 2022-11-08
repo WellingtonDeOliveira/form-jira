@@ -31,7 +31,6 @@
                 } else {
                     echo "<div class='alert alert-success' role='alert'>Issues criadas com sucesso!</div>";
                 }
-
                 $_SESSION['mensagem'] = null;
             }
             ?>

@@ -1,27 +1,37 @@
-{  
-    "perfis":[
+{
+    "perfis": [
         [
             [
-                "teste@teste.com"
+                "germano@trt7.jus.br"
             ],
             [
-                "teste1@teste.com",
-                "teste2@teste.com",
-                "teste3@teste.com",
-                "teste4@teste.com",
-                "teste5@teste.com"
+                "thiagoguilherme@trt7.jus.br",
+                "fabiosl@trt7.jus.br",
+                "germano@trt7.jus.br",
+                "igorbm@trt7.jus.br",
+                "romulo@trt7.jus.br",
+                "edson.reis@trt7.jus.br",
+                "abiviosp@trt7.jus.br",
+                "daviars@trt7.jus.br",
+                "marcelo.quinho@trt7.jus.br",
+                "marcos.castro@trt7.jus.br",
+                "robsontex@trt7.jus.br"
             ]
         ],
         [
             [
-                "teste6@teste.com"
+                "marcelo.lima@trt7.jus.br"
             ],
             [
-                "teste7@teste.com",
-                "teste8@teste.com",
-                "teste9@teste.com",
-                "teste10@teste.com",
-                "teste11@teste.com"
+                "abiviosp@trt7.jus.br",
+                "daviars@trt7.jus.br",
+                "eweton@trt7.jus.br",
+                "filipesc@trt7.jus.br",
+                "igorbm@trt7.jus.br",
+                "marcelo.quinho@trt7.jus.br",
+                "marcelo.lima@trt7.jus.br",
+                "marcos.castro@trt7.jus.br",
+                "robsontex@trt7.jus.br"
             ]
         ]
     ],

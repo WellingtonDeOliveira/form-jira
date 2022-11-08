@@ -23,6 +23,8 @@ $mail = new PHPMailer(true);
 $system = $_POST['system'];
 $data_envio = date('d/m/Y');
 $hora_envio = date('H:i:s');
+$camposCC = $_POST['responsavel'].','.$_POST['observadores'];
+$arrayTemp = explode(",",$camposCC);
 
 $mail->isSMTP();
 $mail->SMTPDebug = 0;
@@ -30,15 +32,23 @@ $mail->Host       = 'smtp.trt7.jus.br';
 $mail->SMTPAuth   = false;
 $mail->Port       = 25;
 
+
 $mail->setFrom('mariojr@trt7.jus.br', 'Mario');
 $mail->addAddress('ddti@trt7.jus.br', 'Jira');
+for($i = 0; $i < count($arrayTemp); $i++){
+  $mail->addCC($arrayTemp[$i]);
+  //echo $arrayTemp[$i];
+}
+
+/* Criar campos para receber os emails cc */
+
 $mail->isHTML(false);
 
 $qtdModulos = 0;
 $qtd = 0;
 $bool = false;
 
-echo $_POST['observadores'];
+//echo $camposCC;
 
 if ($system == "PJe-JT") {
   if (isset($_POST['version-pje']) && $_POST['version-pje'] != '' && $_POST['version-pje'] != null) {
@@ -251,15 +261,15 @@ if ($system == "PJe-JT") {
 if ($qtd == 0 && $bool) {
   $_SESSION['mensagem'] = "success";
   unset($_POST);
-  //header('Location: ..');
+  header('Location: ..');
 } else if ($qtd > 0) {
   $_SESSION['mensagem'] = "danger";
   $_SESSION['quantidade'] = $qtd;
   $_SESSION['quantidadeMod'] = $qtdModulos;
   unset($_POST);
-  //header('Location: ..');
+  header('Location: ..');
 } else {
-  //header('Location: ..');
+  header('Location: ..');
 }
 
 // try {

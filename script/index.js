@@ -7,7 +7,8 @@ $("#system").each(function () {
     for (let i = 0; i < 10; i++) {
         $('.new-append-pje').append('<option value="' + i + '">' + i + '</option>');
     }
-    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
+    $.get("http://localhost:8085/form-jira/perfil.json", function (data) {
+        console.log(data);
         for (let i = 0; i < data.perfis.length; i++) {
             $('#perfil').append('<option value="perfil_' + (i + 1) + '">perfil_' + (i + 1) + '</option>');
         }
@@ -20,7 +21,7 @@ $("#system").each(function () {
             tam = str.length;
         }
         $("#save").attr("disabled", true);
-        $("#observadores").val(str.substring(0, (tam - 2)));
+        $("#observadores").val(str.substring(0, (tam - 1)));
     })
 });
 
@@ -31,7 +32,7 @@ $("#perfil").change(function () {
     $("#responsavel").val("");
     $("#observadores").val("");
     //console.log(info)
-    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
+    $.get("http://localhost:8085/form-jira/perfil.json", function (data) {
         $("#responsavel").val(data.perfis[(info - 1)][0] != undefined ? data.perfis[(info - 1)][0] : "");
         var str = "";
         var tam = 0;
@@ -39,7 +40,7 @@ $("#perfil").change(function () {
             str += data.perfis[(info - 1)][1][i] + " ,";
             tam = str.length;
         }
-        $("#observadores").val(str.substring(0, (tam - 2)));
+        $("#observadores").val(str.substring(0, (tam - 1)));
     })
 })
 
@@ -59,12 +60,12 @@ $("#save").click(function () {
     let temp = $("#observadores").val();
     let temp_array = temp.split('');
     let array_conteudo = [];
-    let email_conteudo ='';
-    for(let i = 0; i < temp_array.length; i++){
-        if(temp_array[i] == ','){
+    let email_conteudo = '';
+    for (let i = 0; i < temp_array.length; i++) {
+        if (temp_array[i] == ',') {
             array_conteudo.push(email_conteudo);
             email_conteudo = '';
-        }else{
+        } else {
             email_conteudo += temp_array[i];
         }
     }
@@ -72,16 +73,16 @@ $("#save").click(function () {
     console.log(array_conteudo);
 
     // Criar uma parte do json novo, onde terar o novo perfil
-    var newConteudo = '[["'+$('#responsavel').val()+'"],[';
-    for(let i = 0; i < array_conteudo.length; i++){
-        newConteudo += JSON.stringify(array_conteudo[i])+',';
+    var newConteudo = '[["' + $('#responsavel').val() + '"],[';
+    for (let i = 0; i < array_conteudo.length; i++) {
+        newConteudo += JSON.stringify(array_conteudo[i]) + ',';
     }
     newConteudo = newConteudo.substring(0, (newConteudo.length - 1));
     newConteudo += ']]';
-    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
-        let conteudo = '{';
+    $.get("http://localhost:8085/form-jira/perfil.json", function (data) {
+        var conteudo = '{';
         conteudo += '"perfis": [';
-        // acresentando valor do novo ciclo
+        // acresentando valor do novo perfil
         for (let i = 0; i < data.count; i++) {
             conteudo += JSON.stringify(data.perfis[i]) + ',';
         }
@@ -89,21 +90,23 @@ $("#save").click(function () {
         conteudo += '], "count": ' + (data.count + 1);
         conteudo += '}';
         console.log(conteudo);
+        console.log('primeiro');
+        $.ajax({
+            url: './script/saveJson.php',
+            type: 'POST',
+            data: { data: conteudo },
+            success: function (result) {
+                // Retorno se tudo ocorreu normalmente
+                console.log("Deu certo");
+                console.log(result);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                // Retorno caso algum erro ocorra
+                console.log("Não deu certo")
+                console.log(jqXHR)
+            }
+        });
     })
-    //atualizarValores(final);
-    $.ajax({
-        url: 'saveJson.php',
-        type: 'POST',
-        data: { data: dados },
-        success: function (result) {
-            // Retorno se tudo ocorreu normalmente
-            console.log("Deu certo");
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-            // Retorno caso algum erro ocorra
-            console.log("Não deu certo")
-        }
-    });
 });
 
 // $(document).ready(function () {

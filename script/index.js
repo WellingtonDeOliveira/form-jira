@@ -7,7 +7,7 @@ $("#system").each(function () {
     for (let i = 0; i < 10; i++) {
         $('.new-append-pje').append('<option value="' + i + '">' + i + '</option>');
     }
-    $.get("https://intranet.trt7.jus.br/form-jira/perfil.json", function (data) {
+    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
         console.log(data);
         for (let i = 0; i < data.perfis.length; i++) {
             $('#perfil').append('<option value="perfil_' + (i + 1) + '">perfil_' + (i + 1) + '</option>');
@@ -32,7 +32,7 @@ $("#perfil").change(function () {
     $("#responsavel").val("");
     $("#observadores").val("");
     //console.log(info)
-    $.get("https://intranet.trt7.jus.br/form-jira/perfil.json", function (data) {
+    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
         $("#responsavel").val(data.perfis[(info - 1)][0] != undefined ? data.perfis[(info - 1)][0] : "");
         var str = "";
         var tam = 0;
@@ -79,7 +79,7 @@ $("#save").click(function () {
     }
     newConteudo = newConteudo.substring(0, (newConteudo.length - 1));
     newConteudo += ']]';
-    $.get("https://intranet.trt7.jus.br/form-jira/perfil.json", function (data) {
+    $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
         var conteudo = '{';
         conteudo += '"perfis": [';
         // acresentando valor do novo perfil
@@ -164,6 +164,7 @@ $("#system").change(function () {
         $('div.system-pje-comment').removeClass('system-active');
         $('div.system-sigep-version').addClass('system-active');
         $('div.system-sigep').addClass('system-active');
+        $('div.perfil').addClass('perfil-sigep');
         document.querySelector(".listing1").checked = 1;
         $('div#SIGEP-Modulo').append('<label id="SIGEP-Modulo-module-label" class="ms-2 mt-2">Versão</label>');
         $('div#SIGEP-Modulo').append('<input id="SIGEP-Modulo-module" type="text" class="form-control m-2 text-module" name="SIGEP-Modulo" placeholder="Ex.: 2.8" required>');
@@ -210,6 +211,7 @@ $("#system").change(function () {
         $('div.system-pje-comment').addClass('system-active');
         $('div.system-sigep').removeClass('system-active');
         $('div.system-sigep-version').removeClass('system-active');
+        $('div.perfil').removeClass('perfil-sigep');
         document.querySelector(".listing1").checked = 0;
         document.querySelector(".listing2").checked = 0;
         document.querySelector(".listing3").checked = 0;

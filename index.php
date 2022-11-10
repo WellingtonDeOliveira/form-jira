@@ -71,11 +71,15 @@
                     <label for="version" class="pb-2"><strong>Descrição</strong></label>
                     <textarea name="descricao" class="form-control" placeholder="Adicione uma descrição para Issue"></textarea>
                 </div>
-                <div class="perfil mb-2 ms-5 col-3">
+                <div class="perfil mb-2 ms-5 col-2">
                     <label for="version" class="pb-2"><strong>Perfis Salvos</strong></label>
-                    <select id="perfil" name="perfil" class="form-control mb-2 ms-1 w-75"></select>
+                    <select id="perfil" name="perfil" class="form-control mb-2 ms-1"></select>
                 </div>
-                <div class="save col-3 mt-2">
+                <div class="per_name mb-2 ms-5 col-2 system-none">
+                    <label for="version" class="pb-2"><strong>Nome do perfil</strong></label>
+                    <input type="text" id="per_name" name="per_name" class="form-control mb-2 ms-1" placeholder="add nome">
+                </div>
+                <div class="save col-2 mt-2">
                     <button id="save" type="button" class="btn btn-primary px-4 py-1 mt-4">salvar</button>
                 </div>
             </div>
@@ -83,28 +87,28 @@
             <div class="system-none system-pje input-group">
                 <label for="Modulos PJE" class=""><strong>Modulos PJE</strong></label>
                 <div class="d-flex my-2">
-                    <div class="form-check-AUD d-flex my-2">
+                    <div class="form-switch form-check-AUD d-flex my-2 form-switch">
                         <input type="checkbox" id="AUD-checkbox" class="form-check-input listing7" value="AUD" name="module2">
                         <label for="AUD" class="form-check-label mx-2">AUD</label>
                     </div>
                 </div>
                 <div id="AUD"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-JTE d-flex my-2">
+                    <div class="form-switch form-check-JTE d-flex my-2">
                         <input type="checkbox" id="JTE-checkbox" class="form-check-input listing8" value="JTE" name="module3">
                         <label for="JTE" class="form-check-label mx-2">JTE</label>
                     </div>
                 </div>
                 <div id="JTE"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-PjeCalc d-flex my-2">
+                    <div class="form-switch form-check-PjeCalc d-flex my-2">
                         <input type="checkbox" id="PjeCalc-checkbox" class="form-check-input listing9" value="PjeCalc" name="module4">
                         <label for="PjeCalc" class="form-check-label mx-2">PjeCalc</label>
                     </div>
                 </div>
                 <div id="PjeCalc"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-SIF d-flex my-2">
+                    <div class="form-switch form-check-SIF d-flex my-2">
                         <input type="checkbox" class="form-check-input listing10" id="SIF-checkbox" value="SIF" name="module5">
                         <label for="SIF" class="form-check-label mx-2">SIF</label>
                     </div>
@@ -114,35 +118,35 @@
             <div class="system-none system-sigep input-group input-group-sigep">
                 <label for="Modulos SIGEP" class=""><strong>Modulos SIGEP</strong></label>
                 <div class="d-flex my-2">
-                    <div class="form-check-SIGEP-Modulo d-flex my-2">
+                    <div class="form-switch form-check-SIGEP-Modulo d-flex my-2">
                         <input type="checkbox" id="SIGEP-Modulo-checkbox" class="form-check-input listing1" value="SIGEP Principal" name="module1">
                         <label for="SIGEP Principal" class="form-check-label mx-2">SIGEP Módulo Principal</label>
                     </div>
                 </div>
                 <div id="SIGEP-Modulo"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-SIGEP-Online d-flex my-2">
+                    <div class="form-switch form-check-SIGEP-Online d-flex my-2">
                         <input type="checkbox" id="SIGEP-Online-checkbox" class="form-check-input listing2" value="SIGEP-Online" name="module2">
                         <label for="SIGEP-Online" class="form-check-label mx-2">SIGEP-Online</label>
                     </div>
                 </div>
                 <div id="SIGEP-Online"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-FolhaWeb d-flex my-2">
+                    <div class="form-switch form-check-FolhaWeb d-flex my-2">
                         <input type="checkbox" id="FolhaWeb-checkbox" class="form-check-input listing3" value="FolhaWeb" name="module3">
                         <label for="FolhaWeb" class="form-check-label mx-2">FolhaWeb</label>
                     </div>
                 </div>
                 <div id="FolhaWeb"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-SIGS d-flex my-2">
+                    <div class="form-switch form-check-SIGS d-flex my-2">
                         <input type="checkbox" id="SIGS-checkbox" class="form-check-input listing4" name="module4" value="SIGS">
                         <label for="SIGS" class="form-check-label mx-2">SIGS</label>
                     </div>
                 </div>
                 <div id="SIGS"></div>
                 <div class="d-flex my-2">
-                    <div class="form-check-GEST d-fex my-2">
+                    <div class="form-switch form-check-GEST d-fex my-2">
                         <input type="checkbox" id="GEST-checkbox" class="form-check-input listing5" name="module5" value="GEST">
                         <label for="GEST" class="form-check-label mx-2">GEST</label>
                     </div>
@@ -155,7 +159,7 @@
         </form>
     </div>
     <div class="footer container w-75">
-        <footer><strong>Versão 1.2.1 - Dev</strong>
+        <footer><strong>Versão 1.2.3 - Dev</strong>
             <p class="final-footer">Desenvolvido pelo TRT - 7</p>
         </footer>
     </div>

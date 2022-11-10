@@ -8,9 +8,8 @@ $("#system").each(function () {
         $('.new-append-pje').append('<option value="' + i + '">' + i + '</option>');
     }
     $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
-        console.log(data);
         for (let i = 0; i < data.perfis.length; i++) {
-            $('#perfil').append('<option value="perfil_' + (i + 1) + '">perfil_' + (i + 1) + '</option>');
+            $('#perfil').append('<option value="perfil_' + (i + 1) + '">perfil_' + data.perfis[i][2] + '</option>');
         }
         $('#perfil').append('<option value="perfil_novo">perfil_novo</option>');
         $("#responsavel").val(data.perfis[0][0]);
@@ -27,10 +26,12 @@ $("#system").each(function () {
 
 $("#perfil").change(function () {
     var per = $(this).val();
+    console.log(per);
     var info = per.substring(7, (8));
     $("#save").attr("disabled", true);
     $("#responsavel").val("");
     $("#observadores").val("");
+    $('div.per_name').addClass('system-none');
     //console.log(info)
     $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
         $("#responsavel").val(data.perfis[(info - 1)][0] != undefined ? data.perfis[(info - 1)][0] : "");
@@ -42,6 +43,9 @@ $("#perfil").change(function () {
         }
         $("#observadores").val(str.substring(0, (tam - 1)));
     })
+    if(per == 'perfil_novo'){
+        $('div.per_name').removeClass('system-none');
+    }
 })
 
 $("#responsavel").change(function () {
@@ -58,6 +62,7 @@ $("#save").click(function () {
 
     // convertendo os observadores para array
     let temp = $("#observadores").val();
+    let temp_name = $("#per_name").val();
     let temp_array = temp.split('');
     let array_conteudo = [];
     let email_conteudo = '';
@@ -78,7 +83,8 @@ $("#save").click(function () {
         newConteudo += JSON.stringify(array_conteudo[i]) + ',';
     }
     newConteudo = newConteudo.substring(0, (newConteudo.length - 1));
-    newConteudo += ']]';
+    newConteudo += '],["'+temp_name+'"]';
+    newConteudo += ']';
     $.get("http://localhost:8085/formulario-Jira/perfil.json", function (data) {
         var conteudo = '{';
         conteudo += '"perfis": [';

@@ -159,7 +159,7 @@
         </form>
     </div>
     <div class="footer container w-75">
-        <footer><strong>Versão 1.2.3 - Dev</strong>
+        <footer><strong>Versão 1.2.4 - Dev</strong>
             <p class="final-footer">Desenvolvido pelo TRT - 7</p>
         </footer>
     </div>

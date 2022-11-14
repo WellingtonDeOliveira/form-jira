@@ -132,13 +132,97 @@ if ($system == "PJe-JT") {
     $qtdModulos = $qtdModulos + 1;
     try {
       $bool = true;
-      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module4'] . " Versão " . $_POST['SIF']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module5'] . " Versão " . $_POST['SIF']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
       $mail->Body    = utf8_decode($_POST['SIF-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
       for ($ct = 0, $ctMax = count($_FILES['SIFFile']['tmp_name']); $ct < $ctMax; $ct++) {
         $ext = PHPMailer::mb_pathinfo($_FILES['SIFFile']['name'][$ct], PATHINFO_EXTENSION);
         $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['SIFFile']['name'][$ct])) . '.' . $ext;
         $filename = $_FILES['SIFFile']['name'][$ct];
         if (move_uploaded_file($_FILES['SIFFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module6']) && isset($_POST['EXE-PJE'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module6'] . " Versão " . $_POST['EXE-PJE']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['EXE-PJE-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['EXE-PJEFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['EXE-PJEFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['EXE-PJEFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['EXE-PJEFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['EXE-PJEFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module7']) && isset($_POST['Nugep'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module7'] . " Versão " . $_POST['Nugep']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['Nugep-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['NugepFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['NugepFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['NugepFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['NugepFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['NugepFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module8']) && isset($_POST['Acervo-Digital'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module8'] . " Versão " . $_POST['Acervo-Digital']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['Acervo-Digital-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['Acervo-DigitalFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['Acervo-DigitalFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['Acervo-DigitalFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['Acervo-DigitalFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['Acervo-DigitalFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module9']) && isset($_POST['SHODO'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module9'] . " Versão " . $_POST['SHODO']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['SHODO-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['SHODOFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['SHODOFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['SHODOFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['SHODOFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['SHODOFile']['tmp_name'][$ct], $uploadfile)) {
           if (!$mail->addAttachment($uploadfile, $filename)) {
           }
         }
@@ -246,6 +330,111 @@ if ($system == "PJe-JT") {
         $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['GESTFile']['name'][$ct])) . '.' . $ext;
         $filename = $_FILES['GESTFile']['name'][$ct];
         if (move_uploaded_file($_FILES['GESTFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module6']) && isset($_POST['Esocial'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module6'] . " Versão " . $_POST['Esocial']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['Esocial-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['EsocialFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['EsocialFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['EsocialFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['EsocialFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['EsocialFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module7']) && isset($_POST['TEIID'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module7'] . " Versão " . $_POST['TEIID']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['TEIID-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['TEIIDFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['TEIIDFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['TEIIDFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['TEIIDFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['TEIIDFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module8']) && isset($_POST['Progecom'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module8'] . " Versão " . $_POST['Progecom']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['Progecom-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['ProgecomFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['ProgecomFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['ProgecomFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['ProgecomFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['ProgecomFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module9']) && isset($_POST['EJUD'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module9'] . " Versão " . $_POST['EJUD']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['EJUD-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['EJUDFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['EJUDFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['EJUDFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['EJUDFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['EJUDFile']['tmp_name'][$ct], $uploadfile)) {
+          if (!$mail->addAttachment($uploadfile, $filename)) {
+          }
+        }
+      }
+      if ($mail->send()) {
+      }
+    } catch (Exception $e) {
+      $qtd = $qtd + 1;
+    }
+  }
+  if (isset($_POST['module10']) && isset($_POST['Passivos'])) {
+    $qtdModulos = $qtdModulos + 1;
+    try {
+      $bool = true;
+      $mail->Subject = utf8_decode("[ATUALIZACAO] Atualizar $system  - Módulo " . $_POST['module10'] . " Versão " . $_POST['Passivos']); // melhorar para o exemplo abaixo e mandar um email para cada modulo
+      $mail->Body    = utf8_decode($_POST['Passivos-body']); // [ATUALIZACAO]  Atualizar SIGEP 1.30.3 - Módulo SIGS Versão 2.2.2
+      for ($ct = 0, $ctMax = count($_FILES['PassivosFile']['tmp_name']); $ct < $ctMax; $ct++) {
+        $ext = PHPMailer::mb_pathinfo($_FILES['PassivosFile']['name'][$ct], PATHINFO_EXTENSION);
+        $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['PassivosFile']['name'][$ct])) . '.' . $ext;
+        $filename = $_FILES['PassivosFile']['name'][$ct];
+        if (move_uploaded_file($_FILES['PassivosFile']['tmp_name'][$ct], $uploadfile)) {
           if (!$mail->addAttachment($uploadfile, $filename)) {
           }
         }

@@ -43,7 +43,7 @@ $("#perfil").change(function () {
         }
         $("#observadores").val(str.substring(0, (tam - 1)));
     })
-    if(per == 'perfil_novo'){
+    if (per == 'perfil_novo') {
         $('div.per_name').removeClass('system-none');
     }
 })
@@ -83,7 +83,7 @@ $("#save").click(function () {
         newConteudo += JSON.stringify(array_conteudo[i]) + ',';
     }
     newConteudo = newConteudo.substring(0, (newConteudo.length - 1));
-    newConteudo += '],["'+temp_name+'"]';
+    newConteudo += '],["' + temp_name + '"]';
     newConteudo += ']';
     $.get("https://intranet.trt7.jus.br/form-jira/perfil.json", function (data) {
         var conteudo = '{';
@@ -163,6 +163,22 @@ $("#system").change(function () {
         $('div#SIF label#SIF-module-label').remove();
         $('div#SIF textarea#SIF-module-body').remove();
         $('div#SIF input#SIFFile').remove();
+        $('div#EXE-PJE input#EXE-PJE-module').remove();
+        $('div#EXE-PJE label#EXE-PJE-module-label').remove();
+        $('div#EXE-PJE textarea#EXE-PJE-module-body').remove();
+        $('div#EXE-PJE input#EXE-PJEFile').remove();
+        $('div#Nugep input#Nugep-module').remove();
+        $('div#Nugep label#Nugep-module-label').remove();
+        $('div#Nugep textarea#Nugep-module-body').remove();
+        $('div#Nugep input#NugepFile').remove();
+        $('div#Acervo-Digital input#Acervo-Digital-module').remove();
+        $('div#Acervo-Digital label#Acervo-Digital-module-label').remove();
+        $('div#Acervo-Digital textarea#Acervo-Digital-module-body').remove();
+        $('div#Acervo-Digital input#Acervo-DigitalFile').remove();
+        $('div#SHODO input#SHODO-module').remove();
+        $('div#SHODO label#SHODO-module-label').remove();
+        $('div#SHODO textarea#SHODO-module-body').remove();
+        $('div#SHODO input#SHODOFile').remove();
         $(".text-module").val("");
         $('#sigep-required').attr("required", "req");
         $('div.system-pje').removeClass('system-active');
@@ -181,6 +197,10 @@ $("#system").change(function () {
         document.querySelector(".listing8").checked = 0;
         document.querySelector(".listing9").checked = 0;
         document.querySelector(".listing10").checked = 0;
+        document.querySelector(".listing11").checked = 0;
+        document.querySelector(".listing12").checked = 0;
+        document.querySelector(".listing13").checked = 0;
+        document.querySelector(".listing14").checked = 0;
     } else {
         $('.system-sigep-version .new-append-sigep').remove();
         $('.system-pje-version .new-append-pje').remove();
@@ -209,6 +229,26 @@ $("#system").change(function () {
         $('div#GEST label#GEST-module-label').remove();
         $('div#GEST textarea#GEST-module-body').remove();
         $('div#GEST input#GESTFile').remove();
+        $('div#Esocial input#Esocial-module').remove();
+        $('div#Esocial label#Esocial-module-label').remove();
+        $('div#Esocial textarea#Esocial-module-body').remove();
+        $('div#Esocial input#EsocialFile').remove();
+        $('div#TEIID input#TEIID-module').remove();
+        $('div#TEIID label#TEIID-module-label').remove();
+        $('div#TEIID textarea#TEIID-module-body').remove();
+        $('div#TEIID input#TEIIDFile').remove();
+        $('div#Progecom input#Progecom-module').remove();
+        $('div#Progecom label#Progecom-module-label').remove();
+        $('div#Progecom textarea#Progecom-module-body').remove();
+        $('div#Progecom input#ProgecomFile').remove();
+        $('div#EJUD input#EJUD-module').remove();
+        $('div#EJUD label#EJUD-module-label').remove();
+        $('div#EJUD textarea#EJUD-module-body').remove();
+        $('div#EJUD input#EJUDFile').remove();
+        $('div#Passivos input#Passivos-module').remove();
+        $('div#Passivos label#Passivos-module-label').remove();
+        $('div#Passivos textarea#Passivos-module-body').remove();
+        $('div#Passivos input#PassivosFile').remove();
         $("select#sigep-required").val("");
         $(".text-module").val("");
         $('#sigep-required').removeAttr("required");
@@ -223,6 +263,11 @@ $("#system").change(function () {
         document.querySelector(".listing3").checked = 0;
         document.querySelector(".listing4").checked = 0;
         document.querySelector(".listing5").checked = 0;
+        document.querySelector(".listing15").checked = 0;
+        document.querySelector(".listing16").checked = 0;
+        document.querySelector(".listing17").checked = 0;
+        document.querySelector(".listing18").checked = 0;
+        document.querySelector(".listing19").checked = 0;
     }
 });
 
@@ -233,15 +278,20 @@ $(".input-group-sigep").change(function () {
     var check3 = document.querySelector(".listing3").checked;
     var check4 = document.querySelector(".listing4").checked;
     var check5 = document.querySelector(".listing5").checked;
+    var check6 = document.querySelector(".listing15").checked;
+    var check7 = document.querySelector(".listing16").checked;
+    var check8 = document.querySelector(".listing17").checked;
+    var check9 = document.querySelector(".listing18").checked;
+    var check10 = document.querySelector(".listing19").checked;
     $("#botao").attr("disabled", false);
-    if (!(check1 == 1 || check2 == 1 || check3 == 1 || check4 == 1 || check5 == 1)) {
+    if (!(check1 == 1 || check2 == 1 || check3 == 1 || check4 == 1 || check5 == 1
+        || check6 == 1 || check7 == 1 || check8 == 1 || check9 == 1 || check10 == 1)) {
         $(".message").append("<div class='alert alert-warning' role='alert'>Selecione pelo menos um modulo!</div>");
         $("#botao").attr("disabled", true);
     }
 });
 
 
-// PJE
 // $(".form-check-PJE").change(function () {
 //     if ($("#PJE-checkbox").prop("checked")) {
 //         $('div#PJE').append('<label id="PJE-module-label" class="ms-2 mt-2">Versão</label>');
@@ -255,6 +305,8 @@ $(".input-group-sigep").change(function () {
 //     }
 // });
 
+
+// PJE
 $(".form-check-AUD").change(function () {
     if ($("#AUD-checkbox").prop("checked")) {
         $('div#AUD').append('<label id="AUD-module-label" class="ms-2 mt-2">Versão</label>');
@@ -314,6 +366,67 @@ $(".form-check-SIF").change(function () {
         $('div#SIF input#SIFFile').remove();
     }
 });
+
+$(".form-check-EXE-PJE").change(function () {
+    if ($("#EXE-PJE-checkbox").prop("checked")) {
+        $('div#EXE-PJE').append('<label id="EXE-PJE-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#EXE-PJE').append('<input id="EXE-PJE-module" type="text" class="form-control m-2 text-module" name="EXE-PJE" placeholder="Ex.: 2.8" required>');
+        $('div#EXE-PJE').append('<label id="EXE-PJE-module-label" class="ms-2">Descrição</label>');
+        $('div#EXE-PJE').append('<textarea id="EXE-PJE-module-body" type="text" class="form-control m-2 text-module" name="EXE-PJE-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#EXE-PJE').append('<input class="form-control m-2 w-50" name="EXE-PJEFile[]" type="file" id="EXE-PJEFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+    } else {
+        $('div#EXE-PJE input#EXE-PJE-module').remove();
+        $('div#EXE-PJE label#EXE-PJE-module-label').remove();
+        $('div#EXE-PJE textarea#EXE-PJE-module-body').remove();
+        $('div#EXE-PJE input#EXE-PJEFile').remove();
+    }
+});
+
+$(".form-check-Nugep").change(function () {
+    if ($("#Nugep-checkbox").prop("checked")) {
+        $('div#Nugep').append('<label id="Nugep-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#Nugep').append('<input id="Nugep-module" type="text" class="form-control m-2 text-module" name="Nugep" placeholder="Ex.: 2.8" required>');
+        $('div#Nugep').append('<label id="Nugep-module-label" class="ms-2">Descrição</label>');
+        $('div#Nugep').append('<textarea id="Nugep-module-body" type="text" class="form-control m-2 text-module" name="Nugep-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#Nugep').append('<input class="form-control m-2 w-50" name="NugepFile[]" type="file" id="NugepFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+    } else {
+        $('div#Nugep input#Nugep-module').remove();
+        $('div#Nugep label#Nugep-module-label').remove();
+        $('div#Nugep textarea#Nugep-module-body').remove();
+        $('div#Nugep input#NugepFile').remove();
+    }
+});
+
+$(".form-check-Acervo-Digital").change(function () {
+    if ($("#Acervo-Digital-checkbox").prop("checked")) {
+        $('div#Acervo-Digital').append('<label id="Acervo-Digital-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#Acervo-Digital').append('<input id="Acervo-Digital-module" type="text" class="form-control m-2 text-module" name="Acervo-Digital" placeholder="Ex.: 2.8" required>');
+        $('div#Acervo-Digital').append('<label id="Acervo-Digital-module-label" class="ms-2">Descrição</label>');
+        $('div#Acervo-Digital').append('<textarea id="Acervo-Digital-module-body" type="text" class="form-control m-2 text-module" name="Acervo-Digital-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#Acervo-Digital').append('<input class="form-control m-2 w-50" name="Acervo-DigitalFile[]" type="file" id="Acervo-DigitalFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+    } else {
+        $('div#Acervo-Digital input#Acervo-Digital-module').remove();
+        $('div#Acervo-Digital label#Acervo-Digital-module-label').remove();
+        $('div#Acervo-Digital textarea#Acervo-Digital-module-body').remove();
+        $('div#Acervo-Digital input#Acervo-DigitalFile').remove();
+    }
+});
+
+$(".form-check-SHODO").change(function () {
+    if ($("#SHODO-checkbox").prop("checked")) {
+        $('div#SHODO').append('<label id="SHODO-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#SHODO').append('<input id="SHODO-module" type="text" class="form-control m-2 text-module" name="SHODO" placeholder="Ex.: 2.8" required>');
+        $('div#SHODO').append('<label id="SHODO-module-label" class="ms-2">Descrição</label>');
+        $('div#SHODO').append('<textarea id="SHODO-module-body" type="text" class="form-control m-2 text-module" name="SHODO-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#SHODO').append('<input class="form-control m-2 w-50" name="SHODOFile[]" type="file" id="SHODOFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+    } else {
+        $('div#SHODO input#SHODO-module').remove();
+        $('div#SHODO label#SHODO-module-label').remove();
+        $('div#SHODO textarea#SHODO-module-body').remove();
+        $('div#SHODO input#SHODOFile').remove();
+    }
+});
+
 
 // SIGEP
 $(".form-check-SIGEP-Modulo").change(function () {
@@ -388,5 +501,80 @@ $(".form-check-GEST").change(function () {
         $('div#GEST label#GEST-module-label').remove();
         $('div#GEST textarea#GEST-module-body').remove();
         $('div#GEST input#GESTFile').remove();
+    }
+});
+
+$(".form-check-Esocial").change(function () {
+    if ($("#Esocial-checkbox").prop("checked")) {
+        $('div#Esocial').append('<label id="Esocial-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#Esocial').append('<input id="Esocial-module" type="text" class="form-control m-2 text-module" name="Esocial" placeholder="Ex.: 2.8" required>');
+        $('div#Esocial').append('<label id="Esocial-module-label" class="ms-2">Descrição</label>');
+        $('div#Esocial').append('<textarea id="Esocial-module-body" type="text" class="form-control m-2 text-module" name="Esocial-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#Esocial').append('<input class="form-control m-2 w-50" name="EsocialFile[]" type="file" id="EsocialFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+    } else {
+        $('div#Esocial input#Esocial-module').remove();
+        $('div#Esocial label#Esocial-module-label').remove();
+        $('div#Esocial textarea#Esocial-module-body').remove();
+        $('div#Esocial input#EsocialFile').remove();
+    }
+});
+
+$(".form-check-TEIID").change(function () {
+    if ($("#TEIID-checkbox").prop("checked")) {
+        $('div#TEIID').append('<label id="TEIID-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#TEIID').append('<input id="TEIID-module" type="text" class="form-control m-2 text-module" name="TEIID" placeholder="Ex.: 2.8" required>');
+        $('div#TEIID').append('<label id="TEIID-module-label" class="ms-2">Descrição</label>');
+        $('div#TEIID').append('<textarea id="TEIID-module-body" type="text" class="form-control m-2 text-module" name="TEIID-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#TEIID').append('<input class="form-control m-2 w-50" name="TEIIDFile[]" type="file" id="TEIIDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+    } else {
+        $('div#TEIID input#TEIID-module').remove();
+        $('div#TEIID label#TEIID-module-label').remove();
+        $('div#TEIID textarea#TEIID-module-body').remove();
+        $('div#TEIID input#TEIIDFile').remove();
+    }
+});
+
+$(".form-check-Progecom").change(function () {
+    if ($("#Progecom-checkbox").prop("checked")) {
+        $('div#Progecom').append('<label id="Progecom-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#Progecom').append('<input id="Progecom-module" type="text" class="form-control m-2 text-module" name="Progecom" placeholder="Ex.: 2.8" required>');
+        $('div#Progecom').append('<label id="Progecom-module-label" class="ms-2">Descrição</label>');
+        $('div#Progecom').append('<textarea id="Progecom-module-body" type="text" class="form-control m-2 text-module" name="Progecom-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#Progecom').append('<input class="form-control m-2 w-50" name="ProgecomFile[]" type="file" id="ProgecomFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+    } else {
+        $('div#Progecom input#Progecom-module').remove();
+        $('div#Progecom label#Progecom-module-label').remove();
+        $('div#Progecom textarea#Progecom-module-body').remove();
+        $('div#Progecom input#ProgecomFile').remove();
+    }
+});
+
+$(".form-check-EJUD").change(function () {
+    if ($("#EJUD-checkbox").prop("checked")) {
+        $('div#EJUD').append('<label id="EJUD-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#EJUD').append('<input id="EJUD-module" type="text" class="form-control m-2 text-module" name="EJUD" placeholder="Ex.: 2.8" required>');
+        $('div#EJUD').append('<label id="EJUD-module-label" class="ms-2">Descrição</label>');
+        $('div#EJUD').append('<textarea id="EJUD-module-body" type="text" class="form-control m-2 text-module" name="EJUD-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#EJUD').append('<input class="form-control m-2 w-50" name="EJUDFile[]" type="file" id="EJUDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+    } else {
+        $('div#EJUD input#EJUD-module').remove();
+        $('div#EJUD label#EJUD-module-label').remove();
+        $('div#EJUD textarea#EJUD-module-body').remove();
+        $('div#EJUD input#EJUDFile').remove();
+    }
+});
+
+$(".form-check-Passivos").change(function () {
+    if ($("#Passivos-checkbox").prop("checked")) {
+        $('div#Passivos').append('<label id="Passivos-module-label" class="ms-2 mt-2">Versão</label>');
+        $('div#Passivos').append('<input id="Passivos-module" type="text" class="form-control m-2 text-module" name="Passivos" placeholder="Ex.: 2.8" required>');
+        $('div#Passivos').append('<label id="Passivos-module-label" class="ms-2">Descrição</label>');
+        $('div#Passivos').append('<textarea id="Passivos-module-body" type="text" class="form-control m-2 text-module" name="Passivos-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
+        $('div#Passivos').append('<input class="form-control m-2 w-50" name="PassivosFile[]" type="file" id="PassivosFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+    } else {
+        $('div#Passivos input#Passivos-module').remove();
+        $('div#Passivos label#Passivos-module-label').remove();
+        $('div#Passivos textarea#Passivos-module-body').remove();
+        $('div#Passivos input#PassivosFile').remove();
     }
 });

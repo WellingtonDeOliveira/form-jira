@@ -470,7 +470,7 @@ if ($system == "PJe-JT") {
     }
   }
 }
-/*
+
 if ($qtd == 0 && $bool) {
   $_SESSION['mensagem'] = "success";
   unset($_POST);
@@ -483,4 +483,4 @@ if ($qtd == 0 && $bool) {
   header('Location: ..');
 } else {
   header('Location: ..');
-}*/
+}

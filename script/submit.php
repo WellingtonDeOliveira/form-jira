@@ -88,7 +88,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile1);
+      unset($_FILES['AUDFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -110,7 +110,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile2);
+      unset($_FILES['JTEFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -132,7 +132,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile3);
+      unset($_FILES['PjeCalcFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -154,7 +154,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile4);
+      unset($_FILES['SIFFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -176,7 +176,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile5);
+      unset($_FILES['EXE-PJEFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -198,7 +198,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile6);
+      unset($_FILES['NugepFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -220,7 +220,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile7);
+      unset($_FILES['Acervo-DigitalFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -242,7 +242,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile8);
+      unset($_FILES['SHODOFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -266,7 +266,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile1);
+      unset($_FILES['SIGEP-ModuloFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -288,7 +288,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile2);
+      unset($_FILES['SIGEP-OnlineFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -310,7 +310,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile3);
+      unset($_FILES['FolhaWebFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -332,7 +332,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile4);
+      unset($_FILES['SIGSFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -354,7 +354,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile5);
+      unset($_FILES['GESTFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -376,7 +376,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile6);
+      unset($_FILES['EsocialFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -398,7 +398,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile7);
+      unset($_FILES['TEIIDFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -420,7 +420,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile8);
+      unset($_FILES['ProgecomFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -442,7 +442,7 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile9);
+      unset($_FILES['EJUDFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
@@ -464,13 +464,13 @@ if ($system == "PJe-JT") {
       }
       if ($mail->send()) {
       }
-      unlink($uploadfile10);
+      unset($_FILES['PassivosFile']);  
     } catch (Exception $e) {
       $qtd = $qtd + 1;
     }
   }
 }
-
+/*
 if ($qtd == 0 && $bool) {
   $_SESSION['mensagem'] = "success";
   unset($_POST);
@@ -483,4 +483,4 @@ if ($qtd == 0 && $bool) {
   header('Location: ..');
 } else {
   header('Location: ..');
-}
+}*/

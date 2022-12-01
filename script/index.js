@@ -115,27 +115,6 @@ $("#save").click(function () {
     })
 });
 
-// $(document).ready(function () {
-//     $("form").submit(function (event) {
-//       var formData = {
-//         system: $("#system").val(),
-//         version: $("#version").val(),
-//       };
-
-//       $.ajax({
-//         type: "POST",
-//         url: "submit.php",
-//         data: formData,
-//         dataType: "json",
-//         encode: true,
-//       }).done(function (data) {
-//         console.log(data);
-//       });
-
-//       event.preventDefault();
-//     });
-//   });
-
 $("#system").change(function () {
     var change = $(this).val();
     if (change == 'SIGEP-JT') {
@@ -291,21 +270,6 @@ $(".input-group-sigep").change(function () {
     }
 });
 
-
-// $(".form-check-PJE").change(function () {
-//     if ($("#PJE-checkbox").prop("checked")) {
-//         $('div#PJE').append('<label id="PJE-module-label" class="ms-2 mt-2">Versão</label>');
-//         $('div#PJE').append('<input id="PJE-module" type="text" class="form-control m-2 text-module" name="PJE" placeholder="Ex.: 2.8" required>');
-//         $('div#PJE').append('<label id="PJE-module-label" class="ms-2">Descrição</label>');
-//         $('div#PJE').append('<textarea id="PJE-module-body" type="text" class="form-control m-2 text-module" name="PJE-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-//     } else {
-//         $('div#PJE input#PJE-module').remove();
-//         $('div#PJE label#PJE-module-label').remove();
-//         $('div#PJE textarea#PJE-module-body').remove();
-//     }
-// });
-
-
 // PJE
 $(".form-check-AUD").change(function () {
     if ($("#AUD-checkbox").prop("checked")) {
@@ -313,7 +277,7 @@ $(".form-check-AUD").change(function () {
         $('div#AUD').append('<input id="AUD-module" type="text" class="form-control m-2 text-module" name="AUD" placeholder="Ex.: 2.8" required>');
         $('div#AUD').append('<label id="AUD-module-label" class="ms-2">Descrição</label>');
         $('div#AUD').append('<textarea id="AUD-module-body" type="text" class="form-control m-2 text-module" name="AUD-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#AUD').append('<input class="form-control m-2 w-50" name="AUDFile[]" type="file" id="AUDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#AUD').append('<input class="form-control m-2 w-50 file-input" name="AUDFile[]" type="file" id="AUDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#AUD input#AUD-module').remove();
         $('div#AUD label#AUD-module-label').remove();
@@ -328,7 +292,7 @@ $(".form-check-JTE").change(function () {
         $('div#JTE').append('<input id="JTE-module" type="text" class="form-control m-2 text-module" name="JTE" placeholder="Ex.: 2.8" required>');
         $('div#JTE').append('<label id="JTE-module-label" class="ms-2">Descrição</label>');
         $('div#JTE').append('<textarea id="JTE-module-body" type="text" class="form-control m-2 text-module" name="JTE-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#JTE').append('<input class="form-control m-2 w-50" name="JTEFile[]" type="file" id="JTEFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#JTE').append('<input class="form-control m-2 w-50 file-input" name="JTEFile[]" type="file" id="JTEFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#JTE input#JTE-module').remove();
         $('div#JTE label#JTE-module-label').remove();
@@ -343,7 +307,7 @@ $(".form-check-PjeCalc").change(function () {
         $('div#PjeCalc').append('<input id="PjeCalc-module" type="text" class="form-control m-2 text-module" name="PjeCalc" placeholder="Ex.: 2.8" required>');
         $('div#PjeCalc').append('<label id="PjeCalc-module-label" class="ms-2">Descrição</label>');
         $('div#PjeCalc').append('<textarea id="PjeCalc-module-body" type="text" class="form-control m-2 text-module" name="PjeCalc-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#PjeCalc').append('<input class="form-control m-2 w-50" name="PjeCalcFile[]" type="file" id="PjeCalcFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+        $('div#PjeCalc').append('<input class="form-control m-2 w-50 file-input" name="PjeCalcFile[]" type="file" id="PjeCalcFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
     } else {
         $('div#PjeCalc input#PjeCalc-module').remove();
         $('div#PjeCalc label#PjeCalc-module-label').remove();
@@ -358,7 +322,7 @@ $(".form-check-SIF").change(function () {
         $('div#SIF').append('<input id="SIF-module" type="text" class="form-control m-2 text-module" name="SIF" placeholder="Ex.: 2.8" required>');
         $('div#SIF').append('<label id="SIF-module-label" class="ms-2">Descrição</label>');
         $('div#SIF').append('<textarea id="SIF-module-body" type="text" class="form-control m-2 text-module" name="SIF-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#SIF').append('<input class="form-control m-2 w-50" name="SIFFile[]" type="file" id="SIFFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+        $('div#SIF').append('<input class="form-control m-2 w-50 file-input" name="SIFFile[]" type="file" id="SIFFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
     } else {
         $('div#SIF input#SIF-module').remove();
         $('div#SIF label#SIF-module-label').remove();
@@ -373,7 +337,7 @@ $(".form-check-EXE-PJE").change(function () {
         $('div#EXE-PJE').append('<input id="EXE-PJE-module" type="text" class="form-control m-2 text-module" name="EXE-PJE" placeholder="Ex.: 2.8" required>');
         $('div#EXE-PJE').append('<label id="EXE-PJE-module-label" class="ms-2">Descrição</label>');
         $('div#EXE-PJE').append('<textarea id="EXE-PJE-module-body" type="text" class="form-control m-2 text-module" name="EXE-PJE-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#EXE-PJE').append('<input class="form-control m-2 w-50" name="EXE-PJEFile[]" type="file" id="EXE-PJEFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+        $('div#EXE-PJE').append('<input class="form-control m-2 w-50 file-input" name="EXE-PJEFile[]" type="file" id="EXE-PJEFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
     } else {
         $('div#EXE-PJE input#EXE-PJE-module').remove();
         $('div#EXE-PJE label#EXE-PJE-module-label').remove();
@@ -388,7 +352,7 @@ $(".form-check-Nugep").change(function () {
         $('div#Nugep').append('<input id="Nugep-module" type="text" class="form-control m-2 text-module" name="Nugep" placeholder="Ex.: 2.8" required>');
         $('div#Nugep').append('<label id="Nugep-module-label" class="ms-2">Descrição</label>');
         $('div#Nugep').append('<textarea id="Nugep-module-body" type="text" class="form-control m-2 text-module" name="Nugep-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#Nugep').append('<input class="form-control m-2 w-50" name="NugepFile[]" type="file" id="NugepFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+        $('div#Nugep').append('<input class="form-control m-2 w-50 file-input" name="NugepFile[]" type="file" id="NugepFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
     } else {
         $('div#Nugep input#Nugep-module').remove();
         $('div#Nugep label#Nugep-module-label').remove();
@@ -403,7 +367,7 @@ $(".form-check-Acervo-Digital").change(function () {
         $('div#Acervo-Digital').append('<input id="Acervo-Digital-module" type="text" class="form-control m-2 text-module" name="Acervo-Digital" placeholder="Ex.: 2.8" required>');
         $('div#Acervo-Digital').append('<label id="Acervo-Digital-module-label" class="ms-2">Descrição</label>');
         $('div#Acervo-Digital').append('<textarea id="Acervo-Digital-module-body" type="text" class="form-control m-2 text-module" name="Acervo-Digital-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#Acervo-Digital').append('<input class="form-control m-2 w-50" name="Acervo-DigitalFile[]" type="file" id="Acervo-DigitalFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+        $('div#Acervo-Digital').append('<input class="form-control m-2 w-50 file-input" name="Acervo-DigitalFile[]" type="file" id="Acervo-DigitalFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
     } else {
         $('div#Acervo-Digital input#Acervo-Digital-module').remove();
         $('div#Acervo-Digital label#Acervo-Digital-module-label').remove();
@@ -418,7 +382,7 @@ $(".form-check-SHODO").change(function () {
         $('div#SHODO').append('<input id="SHODO-module" type="text" class="form-control m-2 text-module" name="SHODO" placeholder="Ex.: 2.8" required>');
         $('div#SHODO').append('<label id="SHODO-module-label" class="ms-2">Descrição</label>');
         $('div#SHODO').append('<textarea id="SHODO-module-body" type="text" class="form-control m-2 text-module" name="SHODO-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#SHODO').append('<input class="form-control m-2 w-50" name="SHODOFile[]" type="file" id="SHODOFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
+        $('div#SHODO').append('<input class="form-control m-2 w-50 file-input" name="SHODOFile[]" type="file" id="SHODOFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple" />');
     } else {
         $('div#SHODO input#SHODO-module').remove();
         $('div#SHODO label#SHODO-module-label').remove();
@@ -435,7 +399,7 @@ $(".form-check-SIGEP-Modulo").change(function () {
         $('div#SIGEP-Modulo').append('<input id="SIGEP-Modulo-module" type="text" class="form-control m-2 text-module" name="SIGEP-Modulo" placeholder="Ex.: 2.8" required>');
         $('div#SIGEP-Modulo').append('<label id="SIGEP-Modulo-module-label" class="ms-2">Descrição</label>');
         $('div#SIGEP-Modulo').append('<textarea id="SIGEP-Modulo-module-body" type="text" class="form-control m-2 text-module" name="SIGEP-Modulo-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#SIGEP-Modulo').append('<input class="form-control m-2 w-50" name="SIGEP-ModuloFile[]" type="file" id="SIGEP-ModuloFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#SIGEP-Modulo').append('<input class="form-control m-2 w-50 file-input" name="SIGEP-ModuloFile[]" type="file" id="SIGEP-ModuloFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#SIGEP-Modulo input#SIGEP-Modulo-module').remove();
         $('div#SIGEP-Modulo label#SIGEP-Modulo-module-label').remove();
@@ -450,7 +414,7 @@ $(".form-check-SIGEP-Online").change(function () {
         $('div#SIGEP-Online').append('<input id="SIGEP-Online-module" type="text" class="form-control m-2 text-module" name="SIGEP-Online" placeholder="Ex.: 2.8" required>');
         $('div#SIGEP-Online').append('<label id="SIGEP-Online-module-label" class="ms-2">Descrição</label>');
         $('div#SIGEP-Online').append('<textarea id="SIGEP-Online-module-body" type="text" class="form-control m-2 text-module" name="SIGEP-Online-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#SIGEP-Online').append('<input class="form-control m-2 w-50" name="SIGEP-OnlineFile[]" type="file" id="SIGEP-OnlineFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#SIGEP-Online').append('<input class="form-control m-2 w-50 file-input" name="SIGEP-OnlineFile[]" type="file" id="SIGEP-OnlineFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#SIGEP-Online input#SIGEP-Online-module').remove();
         $('div#SIGEP-Online label#SIGEP-Online-module-label').remove();
@@ -465,7 +429,7 @@ $(".form-check-FolhaWeb").change(function () {
         $('div#FolhaWeb').append('<input id="FolhaWeb-module" type="text" class="form-control m-2 text-module" name="FolhaWeb" placeholder="Ex.: 2.8" required>');
         $('div#FolhaWeb').append('<label id="FolhaWeb-module-label" class="ms-2">Descrição</label>');
         $('div#FolhaWeb').append('<textarea id="FolhaWeb-module-body" type="text" class="form-control m-2 text-module" name="FolhaWeb-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#FolhaWeb').append('<input class="form-control m-2 w-50" name="FolhaWebFile[]" type="file" id="FolhaWebFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#FolhaWeb').append('<input class="form-control m-2 w-50 file-input" name="FolhaWebFile[]" type="file" id="FolhaWebFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#FolhaWeb input#FolhaWeb-module').remove();
         $('div#FolhaWeb label#FolhaWeb-module-label').remove();
@@ -480,7 +444,7 @@ $(".form-check-SIGS").change(function () {
         $('div#SIGS').append('<input id="SIGS-module" type="text" class="form-control m-2 text-module" name="SIGS" placeholder="Ex.: 2.8" required>');
         $('div#SIGS').append('<label id="SIGS-module-label" class="ms-2">Descrição</label>');
         $('div#SIGS').append('<textarea id="SIGS-module-body" type="text" class="form-control m-2 text-module" name="SIGS-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#SIGS').append('<input class="form-control m-2 w-50" name="SIGSFile[]" type="file" id="SIGSFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#SIGS').append('<input class="form-control m-2 w-50 file-input" name="SIGSFile[]" type="file" id="SIGSFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#SIGS input#SIGS-module').remove();
         $('div#SIGS label#SIGS-module-label').remove();
@@ -495,7 +459,7 @@ $(".form-check-GEST").change(function () {
         $('div#GEST').append('<input id="GEST-module" type="text" class="form-control m-2 text-module" name="GEST" placeholder="Ex.: 2.8" required>');
         $('div#GEST').append('<label id="GEST-module-label" class="ms-2">Descrição</label>');
         $('div#GEST').append('<textarea id="GEST-module-body" type="text" class="form-control m-2 text-module" name="GEST-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#GEST').append('<input class="form-control m-2 w-50" name="GESTFile[]" type="file" id="GESTFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#GEST').append('<input class="form-control m-2 w-50 file-input" name="GESTFile[]" type="file" id="GESTFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#GEST input#GEST-module').remove();
         $('div#GEST label#GEST-module-label').remove();
@@ -510,7 +474,7 @@ $(".form-check-Esocial").change(function () {
         $('div#Esocial').append('<input id="Esocial-module" type="text" class="form-control m-2 text-module" name="Esocial" placeholder="Ex.: 2.8" required>');
         $('div#Esocial').append('<label id="Esocial-module-label" class="ms-2">Descrição</label>');
         $('div#Esocial').append('<textarea id="Esocial-module-body" type="text" class="form-control m-2 text-module" name="Esocial-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#Esocial').append('<input class="form-control m-2 w-50" name="EsocialFile[]" type="file" id="EsocialFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#Esocial').append('<input class="form-control m-2 w-50 file-input" name="EsocialFile[]" type="file" id="EsocialFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#Esocial input#Esocial-module').remove();
         $('div#Esocial label#Esocial-module-label').remove();
@@ -525,7 +489,7 @@ $(".form-check-TEIID").change(function () {
         $('div#TEIID').append('<input id="TEIID-module" type="text" class="form-control m-2 text-module" name="TEIID" placeholder="Ex.: 2.8" required>');
         $('div#TEIID').append('<label id="TEIID-module-label" class="ms-2">Descrição</label>');
         $('div#TEIID').append('<textarea id="TEIID-module-body" type="text" class="form-control m-2 text-module" name="TEIID-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#TEIID').append('<input class="form-control m-2 w-50" name="TEIIDFile[]" type="file" id="TEIIDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#TEIID').append('<input class="form-control m-2 w-50 file-input" name="TEIIDFile[]" type="file" id="TEIIDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#TEIID input#TEIID-module').remove();
         $('div#TEIID label#TEIID-module-label').remove();
@@ -540,7 +504,7 @@ $(".form-check-Progecom").change(function () {
         $('div#Progecom').append('<input id="Progecom-module" type="text" class="form-control m-2 text-module" name="Progecom" placeholder="Ex.: 2.8" required>');
         $('div#Progecom').append('<label id="Progecom-module-label" class="ms-2">Descrição</label>');
         $('div#Progecom').append('<textarea id="Progecom-module-body" type="text" class="form-control m-2 text-module" name="Progecom-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#Progecom').append('<input class="form-control m-2 w-50" name="ProgecomFile[]" type="file" id="ProgecomFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#Progecom').append('<input class="form-control m-2 w-50 file-input" name="ProgecomFile[]" type="file" id="ProgecomFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#Progecom input#Progecom-module').remove();
         $('div#Progecom label#Progecom-module-label').remove();
@@ -555,7 +519,7 @@ $(".form-check-EJUD").change(function () {
         $('div#EJUD').append('<input id="EJUD-module" type="text" class="form-control m-2 text-module" name="EJUD" placeholder="Ex.: 2.8" required>');
         $('div#EJUD').append('<label id="EJUD-module-label" class="ms-2">Descrição</label>');
         $('div#EJUD').append('<textarea id="EJUD-module-body" type="text" class="form-control m-2 text-module" name="EJUD-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#EJUD').append('<input class="form-control m-2 w-50" name="EJUDFile[]" type="file" id="EJUDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#EJUD').append('<input class="form-control m-2 w-50 file-input" name="EJUDFile[]" type="file" id="EJUDFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#EJUD input#EJUD-module').remove();
         $('div#EJUD label#EJUD-module-label').remove();
@@ -570,7 +534,7 @@ $(".form-check-Passivos").change(function () {
         $('div#Passivos').append('<input id="Passivos-module" type="text" class="form-control m-2 text-module" name="Passivos" placeholder="Ex.: 2.8" required>');
         $('div#Passivos').append('<label id="Passivos-module-label" class="ms-2">Descrição</label>');
         $('div#Passivos').append('<textarea id="Passivos-module-body" type="text" class="form-control m-2 text-module" name="Passivos-body" placeholder="Adicione uma descrição para Issue" required></textarea>');
-        $('div#Passivos').append('<input class="form-control m-2 w-50" name="PassivosFile[]" type="file" id="PassivosFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
+        $('div#Passivos').append('<input class="form-control m-2 w-50 file-input" name="PassivosFile[]" type="file" id="PassivosFile" accept=".jpg, .jpeg, .png, .pdf" multiple="multiple"/>');
     } else {
         $('div#Passivos input#Passivos-module').remove();
         $('div#Passivos label#Passivos-module-label').remove();
